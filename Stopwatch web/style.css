@@ -1,0 +1,128 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: "Poppins",sans-serif;
+    box-sizing: border-box;
+}
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg,#08001f,#30197d);
+    color: #fff;
+    position: relative;
+}
+.container{
+    width:800px;
+    height:200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+.clock{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(230, 0, 255,0.12);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(50px);
+}
+.container::before{
+    content: '';
+    width:180px;
+    height: 180px;
+    background: #8e6dfe;
+    border-radius: 10px;
+    left:-50px;
+    top:-50px;
+    position: absolute;
+    z-index: -1;
+}
+.container::after{
+    content: '';
+    width:180px;
+    height: 180px;
+    background: #dd4964;
+    border-radius: 50%;
+    right:-30px;
+    bottom:-50px;
+    position: absolute;
+    z-index: -1;
+}
+.clock span{
+    width: 110px;
+    font-size: 70px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+.clock span::after{
+    font-size: 10px;
+    position: absolute;
+    bottom: -10px;
+    left:50%;
+    transform: translateX(-50%);
+}
+#hrs::after{
+    content: 'HOURS';
+}
+#min::after{
+    content: 'MINUTES';
+}
+#sec::after{
+    content: 'SECONDS';
+}
+#milisec::after{
+    content: 'MILISEC';
+}
+.controls {
+    margin-top: 20px;
+}
+button {
+    background-color: #dd4964;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #ff6584;
+}
+
+button:hover + button {
+    background-color: #8e6dfe;
+}
+
+button:hover + button + button {
+    background-color: #ff6584;
+}
+
+
+.laps-container {
+    margin-top: 35px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.laps-heading {
+    background-color: #4263f4;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+.lap-list {
+    list-style:none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #fbecec;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    max-height: 200px;
+    overflow-y:auto;
+}
